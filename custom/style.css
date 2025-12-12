@@ -1,0 +1,42 @@
+@charset "utf-8";
+
+/* 基本編：ホバーで拡大する */
+.zoom {
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.zoom img {
+  width: 100%;
+  height: 100%;
+  transition: scale 1s;
+}
+.zoom img:hover {
+  scale: 1.2;
+}
+
+/* 応用編：拡大しながら画像を切り替える */
+.gallery-container {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.gallery-item {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  translate: -50% -50%;
+  opacity: 0;
+  scale: 1;
+  transition: opacity 1s, scale 4s;
+}
+.gallery-item.active {
+  opacity: 1;
+  scale: 1.2;
+}

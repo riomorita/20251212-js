@@ -1,0 +1,48 @@
+@charset "utf-8";
+
+.steps {
+  width: 200px;
+  height: 200px;
+  background: url(images/wcb-chan-animation.svg) no-repeat;
+  animation: smile .5s steps(4) infinite;
+}
+.steps:hover {
+  animation-play-state: paused;
+}
+
+@keyframes smile {
+  to {
+    background-position: -800px 0;
+  }
+}
+
+/* 応用編：クリックすると画像が動く */
+.btn-question {
+  color: #0bd;
+  border: 2px solid;
+  border-radius: 8px;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  cursor: flex;
+  place-items: center;
+}
+.btn-question:hover {
+  color: #0d9;
+}
+
+.btn-question span {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  background: url(images/question.svg) no-repeat;
+}
+
+.animate span {
+  animation: question .6s steps(24) forwards;
+}
+
+@keyframes question {
+  to {
+    background-position: -1200px 0;
+  }
+}
